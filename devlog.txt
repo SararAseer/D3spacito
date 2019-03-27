@@ -1,7 +1,7 @@
 Team D3spacito - Sarar Aseer, Jared Asch, Cathy Cai, Michelle Tang
 Softdev pd 6
 ---------------------
-The DevLog of <To be named project>
+The DevLog of nWHY
 
 
  ______   ______   __   __   __       ______   _______     
