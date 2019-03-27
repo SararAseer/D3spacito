@@ -24,6 +24,10 @@ If you click edit, you can change the graph axis and units, customize the formul
 
 We will create a graph based on the users choice of data. The graph will be chosen based on how optimal it is for the data set. According, to the data set there will be a filter that the user may put on it, for instance, lowering the scope from New York to a specific borough.Furthermore, we will have an interactive bar graph. We will allow the user to choose their own size and color scheme, include the size of the bar and the scale. If they do not provide one, appropriate scaling will be used by manipulating the min and max of a given data set. We will also include animations that feature changes from one social media platform to another. This will maintain a user’s interest and help highlight important parts of the graph. 
 
+### Example
+![what](https://github.com/SararAseer/D3spacito/blob/master/Example.png)
+
+
 ### Roles
 
 Sarar A: As project manager, Sarar maintains the devlog, makes sure the team works well together, maintains the design documentation, stays on top of design changes, and handles minor coding issues.
@@ -41,6 +45,7 @@ Michelle T:  Will work on JS & D3 aspects of the website.
 - 03/31  Creating user personal graphs from data/ adding js for isolating data by category
 - 04/01-04/04   Polish templates/js
 - 04/05 Polish templates/js
+
 
 
 
