@@ -3,9 +3,9 @@
 ### Description of data set(s).
 
 HyperLinks:
-https://catalog.data.gov/dataset?organization=city-of-new-york
-https://catalog.data.gov/dataset/nyc-wi-fi-hotspot-locations-9a8e0
-https://catalog.data.gov/dataset/nyc-social-media-usage-555a2
+- https://catalog.data.gov/dataset?organization=city-of-new-york
+- https://catalog.data.gov/dataset/nyc-wi-fi-hotspot-locations-9a8e0
+- https://catalog.data.gov/dataset/nyc-social-media-usage-555a2
 
 Description:
 These data sets allows the user to see a wide variety of subjects and categories regarding the city of New York. The website is filled with data from social media usage to wifi hotspot locations.
@@ -35,12 +35,12 @@ Cathy C: Will work on sending and receiving data throughout the website, & file 
 Michelle T:  Will work on JS & D3 aspects of the website.
 
 ### Timeline:
-03/28 Design doc work
-03/29 Laying out of basic templates and congregate data
-03/30  Implementing basic plot functionality and adding css/Bootstrap
-03/31  Creating user personal graphs from data/ adding js for isolating data by category
-04/01-04/04   Polish templates/js
-04/05 Polish templates/js
+- 03/28 Design doc work
+- 03/29 Laying out of basic templates and congregate data
+- 03/30  Implementing basic plot functionality and adding css/Bootstrap
+- 03/31  Creating user personal graphs from data/ adding js for isolating data by category
+- 04/01-04/04   Polish templates/js
+- 04/05 Polish templates/js
 
 
 
