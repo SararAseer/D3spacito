@@ -15,7 +15,7 @@ var y_scale = d3.scaleLinear()
     .range([500,0]);
 
 var x_axis = d3.axisBottom()
-    .scale(x_scale).tickFormat(d3.format("d"))
+    .scale(x_scale)
 
 var y_axis = d3.axisLeft()
     .scale(y_scale)
