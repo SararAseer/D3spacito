@@ -5,7 +5,6 @@
 HyperLinks:
 - https://catalog.data.gov/dataset?organization=city-of-new-york
 - https://catalog.data.gov/dataset/nyc-wi-fi-hotspot-locations-9a8e0
-- https://catalog.data.gov/dataset/nyc-social-media-usage-555a2
 
 Description:
 These data sets allows the user to see a wide variety of subjects and categories regarding the city of New York. The website is filled with data from social media usage to wifi hotspot locations.
