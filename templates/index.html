@@ -30,17 +30,13 @@ path {
   <svg width="960" height="720" style="float: left"></svg>
   <div id='neighborhoodPopover'> </div>
   <div id='subwayData' style="padding-top: 10%;">
-    <p> Choose what your graph would like to be based on:
     <select>
-
-      <option value="Traffic">Traffic at</option>
-      <option value="Wifi">Wifi at</option>
-      <option value="Social Media">Social Media at</option>
-    </select>
-
-
-    <b id="neighborhood"> </b>
-    <br> <br>
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+</select>
+    <b id="neighborhood"> lets just add stuff here</b>
     <br>
     <button> Generate graph </button>
     <p id="directions"></p>
@@ -53,11 +49,11 @@ var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
-var neighborhood = "";
+var neighborhood = "what";
 var directions = "";
 
 // http://data.beta.nyc//dataset/0ff93d2d-90ba-457c-9f7e-39e47bf2ac5f/resource/35dd04fb-81b3-479b-a074-a27a37888ce7/download/d085e2f8d0b54d4590b1e7d1f35594c1pediacitiesnycneighborhoods.geojson
-d3.json("{{ url_for('static', filename='nyc.json') }}", function(error, nyc) {
+d3.json("nyc.json", function(error, nyc) {
   if (error) throw error;
 
   var path = d3.geoPath()
