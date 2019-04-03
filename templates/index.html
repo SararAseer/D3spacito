@@ -5,10 +5,10 @@
 
 path {
 
-  stroke: #fff;
+  stroke: #000;
   stroke-width: .5;
   stroke-dasharray: 1;
-  fill: #afafaf;
+  fill: #add8e6;
 
 }
 
@@ -16,8 +16,9 @@ path {
   position: absolute;
   text-align: center;
   padding: 2px;
-  font: 12px sans-serif;
-  background: #fff;
+  font: 19px sans-serif;
+  background: #000;
+  color: #fff;
   border: 0px;
   border-radius: 8px;
   pointer-events: none;
@@ -30,15 +31,19 @@ path {
   <svg width="960" height="720" style="float: left"></svg>
   <div id='neighborhoodPopover'> </div>
   <div id='subwayData' style="padding-top: 10%;">
+    <p> Choose what your graph would like to be based on:
     <select>
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
-</select>
-    <b id="neighborhood"> lets just add stuff here</b>
+      <option value="Traffic">Traffic at</option>
+      <option value="Wifi">Wifi at</option>
+      <option value="Social Media">Social Media at</option>
+    </select>
+
+    <b id="neighborhood"> </b>
+    <br> <br>
     <br>
-    <button> Generate graph </button>
+    <form action="/graph" method="GET">
+      <button type = "submit"> Generate graph </button>
+          </form>
     <p id="directions"></p>
   </div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -49,11 +54,11 @@ var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
-var neighborhood = "what";
+var neighborhood = "";
 var directions = "";
 
 // http://data.beta.nyc//dataset/0ff93d2d-90ba-457c-9f7e-39e47bf2ac5f/resource/35dd04fb-81b3-479b-a074-a27a37888ce7/download/d085e2f8d0b54d4590b1e7d1f35594c1pediacitiesnycneighborhoods.geojson
-d3.json("nyc.json", function(error, nyc) {
+d3.json("{{ url_for('static', filename='nyc.json') }}", function(error, nyc) {
   if (error) throw error;
 
   var path = d3.geoPath()
@@ -82,7 +87,7 @@ d3.json("nyc.json", function(error, nyc) {
 
       d3.select("#neighborhoodPopover")
       .transition()
-      .style("opacity", 1)
+      .style("opacity", 10)
       .style("left", (d3.event.pageX) + "px")
       .style("top", (d3.event.pageY) + "px")
       .text(d.properties.neighborhood)

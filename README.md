@@ -8,8 +8,8 @@ HyperLinks:
 
 Description:
 These data sets allows the user to see a wide variety of subjects and categories regarding the city of New York. The website is filled with data from social media usage to wifi hotspot locations.
-	
-Significance:	
+
+Significance:
 Due to the variety of data the user can draw conclusions at their leisure, viewing whatever peeks their interest. In addition, the website allows the user to draw conclusions between data sets that would normally not be seen together (e.g. demographic by zip code, and popular baby names by ethnicity).
 
 ### Explanation, in broad strokes if necessary, of how you aim to make this data come alive.
@@ -21,10 +21,10 @@ If you click edit, you can change the graph axis and units, customize the formul
 
 ### D3 and its role
 
-We will create a graph based on the users choice of data. The graph will be chosen based on how optimal it is for the data set. According, to the data set there will be a filter that the user may put on it, for instance, lowering the scope from New York to a specific borough.Furthermore, we will have an interactive bar graph. We will allow the user to choose their own size and color scheme, include the size of the bar and the scale. If they do not provide one, appropriate scaling will be used by manipulating the min and max of a given data set. We will also include animations that feature changes from one social media platform to another. This will maintain a user’s interest and help highlight important parts of the graph. 
+We will create a graph based on the users choice of data. The graph will be chosen based on how optimal it is for the data set. According, to the data set there will be a filter that the user may put on it, for instance, lowering the scope from New York to a specific borough.Furthermore, we will have an interactive bar graph. We will allow the user to choose their own size and color scheme, include the size of the bar and the scale. If they do not provide one, appropriate scaling will be used by manipulating the min and max of a given data set. We will also include animations that feature changes from one social media platform to another. This will maintain a user’s interest and help highlight important parts of the graph.
 
 ### Example
-![what](https://github.com/SararAseer/D3spacito/blob/master/Example.png)
+![what](https://github.com/SararAseer/D3spacito/blob/master/doc/Example.png)
 
 
 ### Roles
@@ -70,10 +70,5 @@ $ python app.py
 
 5. Open your web browser and open `localhost:5000`
    - Explore our data freely
-   
+
 6. Type `deactivate` to deactivate your virtual environment
-
-
-
-
-
