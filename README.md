@@ -45,6 +45,35 @@ Michelle T:  Will work on JS & D3 aspects of the website.
 - 04/01-04/04   Polish templates/js
 - 04/05 Polish templates/js
 
+### Launch Instructions
+
+1. Clone this repo
+```
+$ git clone https://github.com/SararAseer/D3spacito.git
+```
+
+2. Activate your virtual environment
+```
+$ python3 -m venv venv
+$ . venv/bin/activate
+```
+
+3. Enter directory
+```
+$ cd D3spacito
+```
+
+4. Run app
+```
+$ python app.py
+```
+
+5. Open your web browser and open `localhost:5000`
+   - Explore our data freely
+   
+6. Type `deactivate` to deactivate your virtual environment
+
+
 
 
 
