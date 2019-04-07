@@ -15,7 +15,7 @@ var proj = d3.geo.conicEqualArea()
 
 var p = d3.geo.path().projection( proj );
 
-queue().defer( d3.json, "data/nyc_school_districts.geojson" ).await( rd );
+queue().defer( d3.json, "static/data/nyc_school_districts.geojson" ).await( rd );
 
 function rd( error, districts ) {
 	console.log( districts );
@@ -26,6 +26,7 @@ function rd( error, districts ) {
 		.append( "path" )
 		.attr( "d", p )
 		.attr( "class", "district" )
+		.attr( "focusable" )
 		.on( "mouseover", function ( d ) {
 			d3.select( "h2" )
 				.text( d.properties.district );
