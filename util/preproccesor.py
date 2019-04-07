@@ -25,6 +25,7 @@ with open('static/data/student_data.csv', newline='') as csvfile:
                         questionList[ row[cell] ][answers[cell + stepsAhead]] = 0
                         stepsAhead += 1
 
+
 with open('static/data/student_data.csv', newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter=',', quotechar='"')
     next(reader)

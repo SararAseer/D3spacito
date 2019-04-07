@@ -1,5 +1,7 @@
-var width = window.innerWidth + 10 - 10;
-var height = window.innerHeight + 10 - 10;
+var width = 600;
+var height = 600;
+
+var activeDistrict = null;
 
 var svg = d3.select( "#map" )
 	.append( "svg" )
@@ -18,25 +20,21 @@ var p = d3.geo.path().projection( proj );
 queue().defer( d3.json, "static/data/nyc_school_districts.geojson" ).await( rd );
 
 function rd( error, districts ) {
-	console.log( districts );
-	svg.append( "g" )
-		.selectAll( "path" )
-		.data( districts.features )
-		.enter()
-		.append( "path" )
-		.attr( "d", p )
-		.attr( "class", "district" )
-		.attr( "focusable" )
-		.on( "mouseover", function ( d ) {
-			d3.select( "h2" )
-				.text( d.properties.district );
-			d3.select( this )
-				.attr( "class", "district hover" );
-		} )
-		.on( "mouseout", function ( d ) {
-			d3.select( "h2" )
-				.text( "" );
-			d3.select( this )
-				.attr( "class", "district" );
-		} );
+	svg.append( "g" ).selectAll( "path" ).data( districts.features ).enter().append( "path" ).attr( "d", p ).attr( "class", "district" ).on( "mouseover", function ( d ) {
+		d3.select( "h2" ).text( "District " + d.properties.district );
+		d3.select(this)[0][0].classList.toggle("hover");
+	}).on( "mouseout", function ( d ) {
+		if(activeDistrict){
+			d3.select( "h2" ).text( "District " +  activeDistrict );
+		} else {
+			d3.select( "h2" ).text( "Select a District" );
+		}
+		d3.select(this)[0][0].classList.toggle("hover");
+	}).on( "click", function (d) {
+		if(document.getElementsByClassName("district-active").length > 0){
+			document.getElementsByClassName("district-active")[0].classList.toggle("district-active");
+		}
+		d3.select(this)[0][0].classList.toggle("district-active");
+		activeDistrict = d.properties.district;
+	});
 }

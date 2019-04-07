@@ -1,34 +1,51 @@
 #map {
-    position: relative;
-    top: 100px;
+    width: 600px;
+    margin: auto;
+    transform: scale(1.2, 1.2);
+    transform-origin: top center;
+}
+
+.map-container {
+    width: 100%;
+    background-color: whitesmoke;
+    height: 720px;
 }
 
 #number {
     position: absolute;
-    top: 10%;
-    left: 7%;
+    top: 300px;
+    left: 50px;
+    padding: 20px;
+    box-shadow: 2px 2px 6px 0px lightgrey;
+    background-color: white;
+}
+
+#number h2 {
+    font-weight: 600;
+    color: #007bff;
     font-size: 3.0em;
-    color: #7e7e7e;
+    margin: 0;
 }
 
 h1 {
-    position: absolute;
-    left: 5%;
-    top: 1%;
-    font-size: 3.5em;
+    padding: 20px;
+    font-size: 3.5em !important;
     color: black;
-}
-
-h2 {
-    left: 8%;
     text-align: center;
-    width: 200px;
-    height: 100px;
-    background-color: white;
-    box-shadow: 5px 10px 5px #888888;
+    color: #007bff !important;
+    font-weight: 700 !important;
 }
 
 .district {
     stroke: #fff;
-    fill: #7e7e7e;
+    fill: #007bff;
+}
+
+.district:hover {
+    fill: whitesmoke;
+    stroke: #007bff;
+}
+
+.district-active {
+    fill: #dc3545 !important;
 }
