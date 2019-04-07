@@ -28,5 +28,29 @@ Team -- 2019-03-26 00:50
 - Sarar wrote Interaction
 - Cathy added an example
 - Michelle wrote D3 effects
-- Jared made the sketch
+==============================================================
+
+michelleT -- 2019-04-01 8:25
+--------------------------------------------------------------
+- added base templates for d3 graph and html
+- added three data sets (wifi, traffic, social media)
+==============================================================
+
+michelleT -- 2019-04-02 12:25
+--------------------------------------------------------------
+- added united states movable map
+- changed united states to accommodate new data set
+==============================================================
+
+michelleT -- 2019-04-02 18:25
+--------------------------------------------------------------
+- added nyc map
+- added flask app
+==============================================================
+
+michelleT -- 2019-04-03 11:25
+--------------------------------------------------------------
+- fixed labeling of map
+- added the user ability to choose which graph
+- started linking between the original nyc map and personally map
 ==============================================================
