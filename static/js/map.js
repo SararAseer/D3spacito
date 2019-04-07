@@ -2,6 +2,8 @@ var width = 600;
 var height = 600;
 
 var activeDistrict = null;
+var activeQuestion = null;
+var survey_data = null;
 
 var svg = d3.select( "#map" )
 	.append( "svg" )
@@ -36,5 +38,50 @@ function rd( error, districts ) {
 		}
 		d3.select(this)[0][0].classList.toggle("district-active");
 		activeDistrict = d.properties.district;
+		loadData(activeDistrict, activeQuestion);
 	});
+}
+
+d3.json("static/data/student_survery_data.json", function(json){
+	survey_data = json;
+
+	selection = document.getElementById("question-select");
+
+	selection.addEventListener("change", function(e){
+		activeQuestion = this.value;
+		loadData(activeDistrict, activeQuestion);
+	});
+
+	activeQuestion = Object.keys(survey_data[1])[0];
+
+	loadQuestions();
+});
+
+function loadQuestions(){
+	while (selection.firstChild) {
+	    selection.removeChild(selection.firstChild);
+	}
+
+	for(var key in survey_data[1]){
+		var option = document.createElement("option");
+		option.value = key;
+		option.text = key;
+		selection.appendChild(option);
+	}
+}
+
+function loadData(district, question) {
+
+    var data = []
+	for(var key in survey_data[district][question]){
+		data.push({
+			name: key,
+			val: survey_data[district][question][key]
+		});
+	}
+
+	/*
+		ADD STUFF HERE
+	*/
+
 }
