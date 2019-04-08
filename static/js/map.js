@@ -98,15 +98,17 @@ function loadData(district, question) {
     }
 
 // Donut graph based on dictionary data
-    var height = 400
-    var width = 1000
-    var totalRadius = Math.min(width, height) / 2
+    var height = 500
+    var width = 1100
+    var totalRadius = Math.min(width, height) / 2.5
     var donutHoleRadius = totalRadius * 0.5
     var color = d3.scale.category20c()
 
     var svg = d3.select('#chart').append('svg').attr('width', width).attr('height', height).append('g').attr('transform', `translate(${totalRadius + 100}, ${height / 2})`)
 
     var arc = d3.svg.arc().innerRadius(totalRadius - donutHoleRadius).outerRadius(totalRadius)
+
+		var arcOver = d3.svg.arc().innerRadius(totalRadius - donutHoleRadius).outerRadius(totalRadius + 20);
 
     var pie = d3.layout.pie().value((d) => d.value).sort(null)
 
@@ -116,6 +118,16 @@ function loadData(district, question) {
         .append('path')
         .attr('d', arc)
         .attr('fill', (d, i) => color(d.data.name))
+				.on( "mouseover", function ( d ) {
+					d3.select(this).transition()
+          .duration(100)
+          .attr("d", arcOver);
+      })
+				.on( "mouseout", function ( d ) {
+					d3.select(this).transition()
+          .duration(100)
+          .attr("d", arc);
+				})
 // Creates a legend based on the options from the given data questions
     var legendItemSize = 18
     var legendSpacing = 4
