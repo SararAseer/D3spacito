@@ -1,14 +1,16 @@
-var width = 600;
-var height = 600;
+// Sets up dimensions for the map
+var map_width = 600;
+var map_height = 600;
 
 var activeDistrict = null;
 var activeQuestion = null;
 var survey_data = null;
 
+// Creates d3 canvas and the geographical limits for the map
 var svg = d3.select( "#map" )
 	.append( "svg" )
-	.attr( "width", width )
-	.attr( "height", height );
+	.attr( "width", map_width )
+	.attr( "height", map_height );
 
 var proj = d3.geo.conicEqualArea()
 	.scale( 77423.06161113291 )
@@ -22,15 +24,19 @@ var p = d3.geo.path().projection( proj );
 queue().defer( d3.json, "static/data/nyc_school_districts.geojson" ).await( rd );
 
 function rd( error, districts ) {
+	// ''' Users will get to know the district that their mouse is hovered over. If they click on that district, \
+	// it will be highlighted and data will be generated although no graph will be produced yet '''
 	svg.append( "g" ).selectAll( "path" ).data( districts.features ).enter().append( "path" ).attr( "d", p ).attr( "class", "district" ).on( "mouseover", function ( d ) {
 		d3.select( "h2" ).text( "District " + d.properties.district );
 		d3.select(this)[0][0].classList.toggle("hover");
 	}).on( "mouseout", function ( d ) {
+		// Highlights a given district or tells the user to select one
 		if(activeDistrict){
 			d3.select( "h2" ).text( "District " +  activeDistrict );
 		} else {
 			d3.select( "h2" ).text( "Select a District" );
 		}
+		// If a user clicks on a district, it will turn red and data will be generated on it
 		d3.select(this)[0][0].classList.toggle("hover");
 	}).on( "click", function (d) {
 		if(document.getElementsByClassName("district-active").length > 0){
@@ -38,12 +44,15 @@ function rd( error, districts ) {
 		}
 		d3.select(this)[0][0].classList.toggle("district-active");
 		activeDistrict = d.properties.district;
+		// Sets the innerHTML so user knows which district they are receiving data on
 		document.getElementById("district-num").innerHTML = activeDistrict;
+		// Starts to save data based on the district and question
 		loadData(activeDistrict, activeQuestion);
 	});
 }
 
 d3.json("static/data/student_survery_data.json", function(json){
+	// '''Checks if the user has changed their question, loads new data if so '''
 	survey_data = json;
 
 	selection = document.getElementById("question-select");
@@ -59,6 +68,7 @@ d3.json("static/data/student_survery_data.json", function(json){
 });
 
 function loadQuestions(){
+	// ''' Creates the list of questions that the user can choose from regarding the survey questions '''
 	while (selection.firstChild) {
 	    selection.removeChild(selection.firstChild);
 	}
@@ -73,12 +83,12 @@ function loadQuestions(){
 
 
 function loadData(district, question) {
-
+//  Based on the question the user selects, finds the corresponding values and generates a dictionary around it.
     var existing = document.getElementById("chart")
     while (existing.firstChild) {
         existing.removeChild(existing.firstChild);
     }
-
+// Makes a dictionary
     var data = []
     for (var key in survey_data[district][question]) {
         data.push({
@@ -87,7 +97,7 @@ function loadData(district, question) {
         });
     }
 
-
+// Donut graph based on dictionary data
     var height = 400
     var width = 1000
     var totalRadius = Math.min(width, height) / 2
@@ -106,7 +116,7 @@ function loadData(district, question) {
         .append('path')
         .attr('d', arc)
         .attr('fill', (d, i) => color(d.data.name))
-
+// Creates a legend based on the options from the given data questions
     var legendItemSize = 18
     var legendSpacing = 4
 
@@ -123,7 +133,7 @@ function loadData(district, question) {
             var y = (i * height) - offset
             return `translate(${x}, ${y})`
         })
-
+// Completes the legend
     legend
         .append('rect')
         .attr('width', legendItemSize)
