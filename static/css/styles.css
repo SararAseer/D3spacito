@@ -49,3 +49,7 @@ h1 {
 .district-active {
     fill: #dc3545 !important;
 }
+
+#data {
+  margin-left: 50px;
+}
