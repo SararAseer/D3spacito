@@ -11,6 +11,10 @@
     height: 720px;
 }
 
+.data-container {
+    padding: 30px;
+}
+
 #number {
     position: absolute;
     top: 300px;
@@ -52,4 +56,31 @@ h1 {
 
 #data {
   margin-left: 50px;
+}
+
+.pie {
+  margin: 20px;
+}
+
+#chart {
+    float: left;
+}
+
+.legend {
+  float: left;
+  font-family: "Verdana";
+  font-size: .7em;
+}
+
+.pie text {
+  font-family: "Verdana";
+  fill: #000;
+}
+
+.pie .name-text{
+  font-size: .8em;
+}
+
+.pie .value-text{
+  font-size: 3em;
 }
