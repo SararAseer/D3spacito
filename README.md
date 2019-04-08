@@ -3,28 +3,22 @@
 ### Description of data set(s).
 
 HyperLinks:
-- https://catalog.data.gov/dataset?organization=city-of-new-york
-- https://catalog.data.gov/dataset/nyc-wi-fi-hotspot-locations-9a8e0
+- https://infohub.nyced.org/reports-and-policies/school-quality/nyc-school-survey/survey-archives?fbclid=IwAR1A59E4T3YtsDgAhfkuwDskCXwPjolJs1jupF4UAeufSIuzatrvW85vSe8
 
 Description:
-These data sets allows the user to see a wide variety of subjects and categories regarding the city of New York. The website is filled with data from social media usage to wifi hotspot locations.
+These data sets allows the user to see a wide variety of subjects and categories regarding the schools  of New York. The website is filled with data from safety to grades.
 
 Significance:
-Due to the variety of data the user can draw conclusions at their leisure, viewing whatever peeks their interest. In addition, the website allows the user to draw conclusions between data sets that would normally not be seen together (e.g. demographic by zip code, and popular baby names by ethnicity).
+Due to the variety of data the user can draw conclusions at their leisure, viewing whatever peeks their interest. In addition, the website allows the user to draw conclusions between data sets that would normally not be seen together (e.g. students safety & cafe food).
 
 ### Explanation, in broad strokes if necessary, of how you aim to make this data come alive.
 
-To help the users focus on specific portions of the graph that is created from the data of their choosing, we will create a side panel with options to edit the graph, including multiple drop down menus for customizing the graph’s units, axis, formula, as well as allowing options to add a new data series to the same graph. These filters can also help users zone in on specific details that peaked their interest on different graphs to draw their own conclusions. For example, zoning the data from New York specifically to Queens and seeing correlations between different data sets.
+We will let the user pick and choose whatever district they want on a map of NYC, this way they can feel how location can affect a student, and correlations between locations. With that we will give a vast array of questions that were asked to the students, which the user will be able to see and choose. Once a question is chosen and a district is picked, we will load a pie chart that will represent the students answer.
 
-Example: https://fred.stlouisfed.org/series/GDPC1#0
-If you click edit, you can change the graph axis and units, customize the formula, add a new data series to the same graph, and change the graph format.
 
 ### D3 and its role
 
-We will create a graph based on the users choice of data. The graph will be chosen based on how optimal it is for the data set. According, to the data set there will be a filter that the user may put on it, for instance, lowering the scope from New York to a specific borough.Furthermore, we will have an interactive bar graph. We will allow the user to choose their own size and color scheme, include the size of the bar and the scale. If they do not provide one, appropriate scaling will be used by manipulating the min and max of a given data set. We will also include animations that feature changes from one social media platform to another. This will maintain a user’s interest and help highlight important parts of the graph.
-
-### Example
-![what](https://github.com/SararAseer/D3spacito/blob/master/doc/Example.png)
+We will use a choropleth map too NYC to display all the districts that partook in the school survey. The user will be able to click on one of the districts and highlight it, marking it for the user and informing us that they want to see information about that school. Then the user will choose a question from the list and we will generate a pie chart based on that question. For the mot part the D3 will be used to let the user draw their own conclusions based on the survey questions, answers, and location on the map.
 
 
 ### Roles
@@ -36,6 +30,9 @@ Jared A: Will work on CSS and frontend templates, if possible will join backend 
 Cathy C: Will work on sending and receiving data throughout the website, & file IO/data representation.
 
 Michelle T:  Will work on JS & D3 aspects of the website.
+
+### Sketch
+![what](https://github.com/SararAseer/D3spacito/blob/master/doc/Example.png)
 
 ### Timeline:
 - 03/28 Design doc work
