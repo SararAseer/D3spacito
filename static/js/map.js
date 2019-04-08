@@ -162,6 +162,6 @@ function loadData(district, question) {
         .append('text')
         .attr('x', legendItemSize + legendSpacing)
         .attr('y', legendItemSize - legendSpacing)
-        .text((d) => d + " (" + survey_data[district][question][d] + ") " + String(survey_data[district][question][d]/parseFloat(sum) * 100).substring(0, 4) + "%")
+        .text((d) => d + " (" + survey_data[district][question][d] + ") - " + String(survey_data[district][question][d]/parseFloat(sum) * 100).substring(0, 4) + "%")
 
 }
