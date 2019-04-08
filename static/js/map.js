@@ -132,7 +132,7 @@ function loadData(district, question) {
             var x = totalRadius + 100;
             var y = (i * height) - offset
             return `translate(${x}, ${y})`
-        })
+        });
 // Completes the legend
     legend
         .append('rect')
@@ -144,6 +144,6 @@ function loadData(district, question) {
         .append('text')
         .attr('x', legendItemSize + legendSpacing)
         .attr('y', legendItemSize - legendSpacing)
-        .text((d) => d)
+        .text((d) => d + " (" + survey_data[district][question][d] + ")")
 
 }
