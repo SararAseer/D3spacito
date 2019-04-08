@@ -133,6 +133,12 @@ function loadData(district, question) {
             var y = (i * height) - offset
             return `translate(${x}, ${y})`
         });
+
+			var sum = 0;
+			for(var key in survey_data[district][question]){
+				sum += survey_data[district][question][key];
+			}
+
 // Completes the legend
     legend
         .append('rect')
@@ -144,6 +150,6 @@ function loadData(district, question) {
         .append('text')
         .attr('x', legendItemSize + legendSpacing)
         .attr('y', legendItemSize - legendSpacing)
-        .text((d) => d + " (" + survey_data[district][question][d] + ")")
+        .text((d) => d + " (" + survey_data[district][question][d] + ") " + String(survey_data[district][question][d]/parseFloat(sum) * 100).substring(0, 4) + "%")
 
 }
