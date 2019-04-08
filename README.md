@@ -18,7 +18,7 @@ We will let the user pick and choose whatever district they want on a map of NYC
 
 ### D3 and its role
 
-We will use a choropleth map too NYC to display all the districts that partook in the school survey. The user will be able to click on one of the districts and highlight it, marking it for the user and informing us that they want to see information about that school. Then the user will choose a question from the list and we will generate a pie chart based on that question. For the mot part the D3 will be used to let the user draw their own conclusions based on the survey questions, answers, and location on the map.
+We will use a choropleth map to NYC to display all the districts that partook in the school survey. The user will be able to click on one of the districts and highlight it, marking it for the user and informing us that they want to see information about that school. Then the user will choose a question from the list and we will generate a pie chart based on that question. For the mot part the D3 will be used to let the user draw their own conclusions based on the survey questions, answers, and location on the map.
 
 
 ### Roles
