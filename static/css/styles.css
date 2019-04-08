@@ -64,6 +64,8 @@ h1 {
 
 #chart {
     float: left;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .legend {

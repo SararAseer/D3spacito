@@ -12,9 +12,6 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/graph")
-def graph():
-    return render_template("graph.html")
 
 # run flask app with debug set to true
 if __name__ == "__main__":

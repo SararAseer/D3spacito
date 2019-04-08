@@ -38,6 +38,7 @@ function rd( error, districts ) {
 		}
 		d3.select(this)[0][0].classList.toggle("district-active");
 		activeDistrict = d.properties.district;
+		document.getElementById("district-num").innerHTML = activeDistrict;
 		loadData(activeDistrict, activeQuestion);
 	});
 }
@@ -70,18 +71,69 @@ function loadQuestions(){
 	}
 }
 
+
 function loadData(district, question) {
 
-    var data = []
-	for(var key in survey_data[district][question]){
-		data.push({
-			name: key,
-			val: survey_data[district][question][key]
-		});
-	}
+    var existing = document.getElementById("chart")
+    while (existing.firstChild) {
+        existing.removeChild(existing.firstChild);
+    }
 
-	/*
-		ADD STUFF HERE
-	*/
+    var data = []
+    for (var key in survey_data[district][question]) {
+        data.push({
+            name: key,
+            value: survey_data[district][question][key]
+        });
+    }
+
+
+    var height = 400
+    var width = 1000
+    var totalRadius = Math.min(width, height) / 2
+    var donutHoleRadius = totalRadius * 0.5
+    var color = d3.scale.category20c()
+
+    var svg = d3.select('#chart').append('svg').attr('width', width).attr('height', height).append('g').attr('transform', `translate(${totalRadius + 100}, ${height / 2})`)
+
+    var arc = d3.svg.arc().innerRadius(totalRadius - donutHoleRadius).outerRadius(totalRadius)
+
+    var pie = d3.layout.pie().value((d) => d.value).sort(null)
+
+    var path = svg.selectAll('path')
+        .data(pie(data))
+        .enter()
+        .append('path')
+        .attr('d', arc)
+        .attr('fill', (d, i) => color(d.data.name))
+
+    var legendItemSize = 18
+    var legendSpacing = 4
+
+    var legend = svg
+        .selectAll('.legend')
+        .data(color.domain())
+        .enter()
+        .append('g')
+        .attr('class', 'legend')
+        .attr('transform', (d, i) => {
+            var height = legendItemSize + legendSpacing
+            var offset = height * color.domain().length / 2
+            var x = totalRadius + 100;
+            var y = (i * height) - offset
+            return `translate(${x}, ${y})`
+        })
+
+    legend
+        .append('rect')
+        .attr('width', legendItemSize)
+        .attr('height', legendItemSize)
+        .style('fill', color);
+
+    legend
+        .append('text')
+        .attr('x', legendItemSize + legendSpacing)
+        .attr('y', legendItemSize - legendSpacing)
+        .text((d) => d)
 
 }

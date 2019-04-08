@@ -10,20 +10,21 @@
     </head>
     <body>
         <h1>NYC School District Survey Results</h1>
+
         <div class = "map-container">
             <div id="number">
                 <h2>Select a District</h2>
             </div>
             <div id="map"></div>
-            <a href="/graph"><input type="submit" name="submit_button" class = "btn btn-primary" value="Check Data" id="data"></a>
         </div>
 
         <div class = "container data-container">
-            <h2>Survey Data for District 2</h2>
+            <h2>Survey Data for District <span id = "district-num"></span></h2>
             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Select a Survery Question</label>
             <select class="custom-select my-1 mr-sm-2" id="question-select"></select>
-            <div id="graph"></div>
+            <div id="chart"></div>
         </div>
+
         <script src="http://d3js.org/topojson.v1.min.js"></script>
         <script src="{{ url_for('static', filename='js/map.js') }}"></script>
     </body>
