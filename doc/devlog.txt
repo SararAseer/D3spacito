@@ -75,12 +75,17 @@ michelleT-- 2019-04-06 11:22
 
 cathyC-- 2019-04-06 12:26
 --------------------------------------------------------------
-- Worked on finding D3 charts/graphs that fits data 
+- Worked on finding D3 charts/graphs that fits data
+==============================================================
+
+jaredA-- 2019-04-06 13:00
+--------------------------------------------------------------
+-  Created UI that calls JS functions
 ==============================================================
 
 michelleT & cathyC-- 2019-04-06 13:11
 --------------------------------------------------------------
-- Found pie charts, and experimented with it a bit  
+- Found pie charts, and experimented with it a bit
 ==============================================================
 
 jaredA-- 2019-04-06 15:42
@@ -99,8 +104,3 @@ sararA-- 2019-04-07 21:12
 - Bug testing
 - polished up README, devlog, etc.
 ==============================================================
-
-
-
-
-
